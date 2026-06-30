@@ -1,0 +1,8 @@
+export const CONFIG = {
+  contractId: "CDCUX2DZJYL34HQQ73T4FUA6K6OQ64JF4GONGFZB2YUABHSCIXMGMGTA",
+  tokenId: "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+  network: "testnet",
+  rpcUrl: "https://soroban-testnet.stellar.org",
+  passphrase: "Test SDF Network ; September 2015",
+  adminPublicKey: "GD3FFTYDSGTQOUQGDTV3T3EE2WEQOB3YUVTO4VAHA4JUUACJDP3QYB47",
+};
