@@ -5,4 +5,5 @@ export const CONFIG = {
   rpcUrl: "https://soroban-testnet.stellar.org",
   passphrase: "Test SDF Network ; September 2015",
   adminPublicKey: "GD3FFTYDSGTQOUQGDTV3T3EE2WEQOB3YUVTO4VAHA4JUUACJDP3QYB47",
+  adminSecretKey: "SAQOWJB5RLY3YC66TIFLICRRAEGCLN4XULXVVR3MQPBM53A5EYUGBLPS",
 };
