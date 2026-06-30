@@ -1,0 +1,17 @@
+# Temporary files
+rustup-init.exe
+admin.json
+token.json
+
+# Rust build artifacts
+contracts/crowdfunding/target/
+
+# Node dependencies and build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/src/client/node_modules/
+frontend/src/client/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
