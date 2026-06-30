@@ -464,7 +464,7 @@ function App() {
       const tx = await client.pledge({
         donor: walletAddress,
         amount: amountStroops
-      });
+      }, { publicKey: walletAddress });
 
       return await tx.signAndSend();
     });
@@ -483,7 +483,7 @@ function App() {
 
       const tx = await client.submit_proof({
         proof_url: proofUrlInput
-      });
+      }, { publicKey: walletAddress });
 
       return await tx.signAndSend();
     });
@@ -500,7 +500,7 @@ function App() {
       const tx = await client.vote({
         donor: walletAddress,
         approve
-      });
+      }, { publicKey: walletAddress });
 
       return await tx.signAndSend();
     });
@@ -512,7 +512,7 @@ function App() {
       const client = clientRef.current;
       if (!client) throw new Error("Client not initialized");
 
-      const tx = await client.resolve_milestone();
+      const tx = await client.resolve_milestone({ publicKey: walletAddress });
       return await tx.signAndSend();
     });
   };
@@ -525,7 +525,7 @@ function App() {
 
       const tx = await client.refund({
         donor: walletAddress
-      });
+      }, { publicKey: walletAddress });
 
       return await tx.signAndSend();
     });
