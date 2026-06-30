@@ -13,11 +13,7 @@ import {
   PlusCircle, 
   Loader2,
   Vote,
-  Send,
-  ShieldAlert,
-  ChevronDown,
-  ChevronUp,
-  UserCheck
+  Send
 } from 'lucide-react';
 import { 
   StellarWalletsKit, 
@@ -95,7 +91,6 @@ function App() {
   const [txStatus, setTxStatus] = useState<TxStatus>({ state: 'idle', message: '' });
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [expandedMilestone, setExpandedMilestone] = useState<number | null>(0); // Default expand first milestone
-  const [complianceOpen, setComplianceOpen] = useState(true); // Requirements checklist default open
   const [activities, setActivities] = useState<Activity[]>([
     { id: '1', text: 'Campaign contract deployed on Testnet.', time: 'Just now' }
   ]);
@@ -832,52 +827,6 @@ function App() {
               )}
             </section>
 
-            {/* Requirement Compliance Checklist Panel */}
-            <section className="compliance-drawer">
-              <div className="compliance-header" onClick={() => setComplianceOpen(!complianceOpen)}>
-                <span className="compliance-title">
-                  <ShieldAlert size={16} /> Level 2 Gereksinim Kontrol Paneli (Compliance Status)
-                </span>
-                {complianceOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-              </div>
-              
-              {complianceOpen && (
-                <div className="compliance-list">
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 1:</strong> Stellar Testnet akıllı sözleşme dağıtımı (Contract ID kayıtlı ve çalışır durumda)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 2:</strong> Çoklu cüzdan desteği (StellarWalletsKit ile Freighter/Albedo/Hana modalı)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 3:</strong> Hata Yönetimi - "Cüzdan Bulunamadı / Kurulu Değil" senaryosu (Toast uyarısı)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 4:</strong> Hata Yönetimi - "İmzalama Kullanıcı Tarafından İptal Edildi" (Toast uyarısı)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 5:</strong> Hata Yönetimi - "Yetersiz Bakiye" senaryosu (Toast uyarısı)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 6:</strong> İşlem durumu takip arayüzü (Pending/Success/Fail) ve Stellar Explorer Linki</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 7:</strong> Real-time Event Entegrasyonu (RPC ile canlı bağış ve oy takibi)</span>
-                  </div>
-                  <div className="compliance-item completed">
-                    <span className="compliance-check completed"><CheckCircle size={14} /></span>
-                    <span><strong>Gereksinim 8:</strong> En az 2 adet anlamlı GitHub commit'i (Feat: smart contract & Feat: glassmorphism dashboard)</span>
-                  </div>
-                </div>
-              )}
-            </section>
           </div>
 
           {/* Sidebar Column */}
