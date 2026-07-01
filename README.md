@@ -1,8 +1,13 @@
 # Stellar Soroban Güvenceli Aşamalı Kitlesel Fonlama (Milestone-Based Crowdfunding)
 
-Stellar Soroban akıllı sözleşme altyapısı üzerine inşa edilmiş, şeffaf, güvenli ve aşamalı (milestone-based) bir kitlesel fonlama (crowdfunding) platformu.
+## 🚀 Dağıtılmış Sözleşme Bilgileri (Deployed Contract Details)
 
-Bu proje, fonların proje sahibine tek seferde aktarılması yerine, proje sahibinin önceden belirlediği aşamaları (Milestones) tamamlayıp kanıtlar sunması ve bu kanıtların bağışçılar tarafından oylanarak onaylanması esasına dayanır.
+- **Ağ (Network):** Stellar Testnet
+- **Sözleşme Kimliği (Contract ID):** `CDCUX2DZJYL34HQQ73T4FUA6K6OQ64JF4GONGFZB2YUABHSCIXMGMGTA`
+- **Native Token (SAC - XLM) Sözleşme Kimliği:** `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC`
+- **Yönetici (Admin) Adresi:** `GD3FFTYDSGTQOUQGDTV3T3EE2WEQOB3YUVTO4VAHA4JUUACJDP3QYB47`
+- **Sözleşme Dağıtım (Deploy) Tx:** [da4f663367a30f7fefce3589649eab7b4f87f0dfba4590c2f1e33589355d963a](https://stellar.expert/explorer/testnet/tx/da4f663367a30f7fefce3589649eab7b4f87f0dfba4590c2f1e33589355d963a)
+- **Sözleşme Başlatma (Initialize) Tx:** [49cc06150da4d35ba4d89305e261164d4dc5a7499b18d9adec8ac246b1bd6ed0](https://stellar.expert/explorer/testnet/tx/49cc06150da4d35ba4d89305e261164d4dc5a7499b18d9adec8ac246b1bd6ed0)
 
 ---
 
@@ -50,7 +55,7 @@ Bu proje, fonların proje sahibine tek seferde aktarılması yerine, proje sahib
 - Node.js (v18+) ve npm
 
 ### 1. Akıllı Sözleşmeyi Derleme ve Test Etme
-Sözleşme dizinine gidin ve testleri çalıştırın:
+Sözleşme dizinine gidin ve testleri çalışrittin:
 ```bash
 cd contracts/crowdfunding
 cargo test
@@ -80,3 +85,4 @@ Proje geliştirme sürecinde aşağıdaki anlamlı commit'ler atılmıştır:
 3. `feat: add virtual developer wallets, interactive milestones, and compliance dashboard`
 4. `style: remove compliance checklist panel for clean production layout`
 5. `fix: pass publicKey parameter to all write transaction calls to resolve FakeAccountError`
+6. `docs: add comprehensive Turkish README.md with screenshots`

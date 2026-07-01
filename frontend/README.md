@@ -1,32 +1,49 @@
-# React + TypeScript + Vite
+# Milestone Crowdfunding - Önyüz Uygulaması (Frontend Application)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Bu dizin, kitlesel fonlama platformunun kullanıcı dostu, modern koyu tema (glassmorphism) tasarımlı React önyüzünü barındırır.
 
-Currently, two official plugins are available:
+## 🚀 Entegre Edilmiş Akıllı Sözleşme Bilgileri
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Önyüz uygulaması, **Stellar Testnet** ağı üzerinde canlı olarak çalışan aşağıdaki akıllı sözleşme ile etkileşim kurar:
 
-## React Compiler
+- **Sözleşme Kimliği (Contract ID):** `CDCUX2DZJYL34HQQ73T4FUA6K6OQ64JF4GONGFZB2YUABHSCIXMGMGTA`
+- **Native Token (SAC - XLM) Sözleşme Kimliği:** `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC`
+- **Yönetici (Admin) Genel Anahtarı:** `GD3FFTYDSGTQOUQGDTV3T3EE2WEQOB3YUVTO4VAHA4JUUACJDP3QYB47`
+- **RPC Sunucusu:** `https://soroban-testnet.stellar.org`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> [!NOTE]
+> Sözleşme yapılandırması [src/config.ts](src/config.ts) dosyası içerisinde saklanmaktadır.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🎨 Temel Özellikler
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+1. **Çoklu Cüzdan Entegrasyonu:** `Freighter`, `Albedo` ve `Hana` cüzdanları üzerinden doğrudan işlem imzalama.
+2. **Sanal Geliştirici Cüzdanları (Mocking):** Eklenti kurma zahmeti olmadan anında test yapabilmek amacıyla:
+   - **Sanal Bağışçı Cüzdanı:** Friendbot ile otomatik 10,000 XLM yüklü test hesabı açar.
+   - **Sanal Yönetici Cüzdanı:** Proje yöneticisinin yerine yetkilendirme sağlar.
+3. **İnteraktif Aşamalar (Roadmap):** Oylamalar ve kanıt gönderimleri interaktif yol haritası kartları içinden yönetilir.
+4. **Blockchain Event Dinleyicisi:** Soroban RPC'si üzerinden canlı bağış ve oy hareketlerini dinleyerek arayüzü anında günceller.
+5. **Kapsamlı Hata Yönetimi:** Yetersiz bakiye, cüzdan bulunamadı ve işlem iptal durumları şık Toast bildirimleriyle yönetilir.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## ⚙️ Kurulum ve Başlatma
+
+Aşağıdaki komutları kullanarak önyüzü yerel bilgisayarınızda çalıştırabilirsiniz:
+
+1. Bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
+
+2. Yerel geliştirme sunucusunu (Dev Server) başlatın:
+   ```bash
+   npm run dev
+   ```
+   *Uygulama varsayılan olarak `http://localhost:5173` adresinde çalışacaktır.*
+
+3. Üretim paketi derleme (Production Build):
+   ```bash
+   npm run build
+   ```
